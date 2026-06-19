@@ -15,7 +15,39 @@ export default function Home() {
     automatizado e uma presença digital que transmite profissionalismo desde o
     primeiro clique.
   </p>
+
+  <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+  <button className="inline-flex items-center justify-center rounded-full bg-fg-gold px-6 py-3 text-sm font-semibold text-fg-black shadow-md transition hover:brightness-110">
+    Quero um site que trabalhe por mim
+  </button>
+
+  <button className="inline-flex items-center justify-center rounded-full border border-fg-gray px-6 py-3 text-sm font-semibold text-fg-text transition hover:bg-fg-gray-dark">
+    Ver como funciona
+  </button>
 </div>
+</div>
+        </div>
+
+        <div className="mt-16 max-w-3xl text-left">
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
+            Como seu site trabalha por você 24/7
+          </h2>
+          
+          <ul className="space-y-3 text-fg-gray text-base sm:text-lg">
+            <li>
+              Seu negócio continua respondendo, vendendo e trabalhando mesmo enquanto você
+              dorme ou está ocupado.
+            </li>
+            <li>
+              Seus clientes encontram informações e respostas sem precisar esperar por atendimento.
+            </li>
+            <li>
+              Sua empresa transmite mais confiança e credibilidade desde o primeiro contato.
+            </li>
+            <li>
+              Menos tempo respondendo perguntas repetidas, mais tempo fechando negócios.
+            </li>
+          </ul>
         </div>
       </main>
     </div>
