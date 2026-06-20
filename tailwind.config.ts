@@ -8,11 +8,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'fg-black': '#050509',
-        'fg-gold': '#D4AF37',
-        'fg-gray-dark': '#1F2933',
-        'fg-gray': '#9CA3AF',
-        'fg-text': '#F5F5F7',
+        "fg-black": "#050505",
+        "fg-text": "#009fafb",
+        "fg-gray": "#9ca3af",
+        "fg-gray-dark": "#4b5563",
+        "fg-gold": "#facc15",
       },
     },
   },
