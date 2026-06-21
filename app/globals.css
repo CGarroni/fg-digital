@@ -6,11 +6,14 @@
 }
 
 @theme {
-  --color-fg-black: #050505;
-  --color-fg-text: #f9fafb;
-  --color-fg-gray: #9ca3af;
-  --color-fg-gray-dark: #4b5563;
-  --color-fg-gold: #facc15;
+  --color-fg-black: #050505;        /* bg-primary */
+  --color-fg-surface: #121212;      /* bg-secondary */
+  --color-fg-gold: #C99A4A;         /* gold-primary */
+  --color-fg-gold-soft: #D8AE63;    /* gold-secondary */
+  --color-fg-gold-light: #FFD37A;   /* gold-light */
+  --color-fg-text: #F5F5F5;         /* text-primary */
+  --color-fg-gray: #BDBDBD;         /* text-secondary */
+  --color-fg-gold-border: #8B6731;  /* border-gold */
 }
 
 @media (prefers-color-scheme: dark) {

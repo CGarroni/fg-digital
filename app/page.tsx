@@ -1,25 +1,51 @@
 "use client";
-
+import Image from "next/image";
 import { MouseEvent } from "react";
 
 export default function Home() {
-	function scrollToContato(event: MouseEvent<HTMLAnchorElement>) {
+	function scrollToSection(event: MouseEvent<HTMLAnchorElement>) {
 		event.preventDefault();
-		const section = document.querySelector("#contato");
+		const target = event.currentTarget.getAttribute("href");
+		if (!target) return;
+
+		const section = document.querySelector(target);
 		if (!section) return;
+
 		section.scrollIntoView({
 			behavior: "smooth",
 			block: "start",
 		});
 	}
+
 	return (
 		<div className="min-h-screen bg-fg-black text-fg-text">
+			<header className="w-full border-b border-fg-gray-dark">
+				<div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 sm:px-8">
+					<div className="flex items-center gap-2">
+						<Image
+							src="/fg-digital.png" // ou fg-digital2.png, conforme o arquivo
+							alt="FG Digital"
+							width={48}
+							height={48}
+							className="h-12 w-12 rounded-full object-cover"
+						/>
+					</div>
+
+					<a
+						href="#como-funciona"
+						onClick={scrollToSection}
+						className="hidden rounded-full border border-fg-gray-dark px-4 py-1.5 text-xs font-medium text-fg-text hover:border-fg-gold-border hover:text-fg-gold-soft sm:inline"
+					>
+						Como funciona
+					</a>
+				</div>
+			</header>
+
 			<main className="flex min-h-screen flex-col items-center justify-center px-6 sm:px-8">
-				<div className="max-w-3xl text-center sm:text-left">
+				<div className="max-w-3xl text-center sm:text-left mt-10 sm:mt-14">
 					<div className="space-y-6">
-						<h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
-							Seu próximo cliente está procurando no Google agora.
-							<br />
+						<h1 className="text-3xl sm:text-4xl font-bold leading-tight sm:leading-tight">
+							Seu próximo cliente está procurando no Google agora. <br />
 							Seu negócio aparece bem e responde mesmo depois do horário
 							comercial?
 						</h1>
@@ -33,15 +59,19 @@ export default function Home() {
 						<div className="mt-8 flex flex-col gap-4 sm:flex-row">
 							<a
 								href="#contato"
-								onClick={scrollToContato}
-								className="inline-flex items-center justify-center rounded-full bg-fg-gold px-6 py-3 text-sm font-semibold text-fg-black shadow-md transition hover:brightness-110"
+								onClick={scrollToSection}
+								className="inline-flex items-center justify-center rounded-full bg-fg-gold px-6 py-3 text-sm font-semibold text-fg-black shadow-md transition hover:bg-fg-gold-soft"
 							>
 								Quero um site que trabalhe por mim
 							</a>
 
-							<button className="inline-flex items-center justify-center rounded-full border border-fg-gray px-6 py-3 text-sm font-semibold text-fg-text transition hover:bg-fg-gray-dark">
+							<a
+								href="#como-funciona"
+								onClick={scrollToSection}
+								className="inline-flex items-center justify-center rounded-full border border-fg-gray-dark px-6 py-3 text-sm font-semibold text-fg-text transition hover:border-fg-gold-border hover:text-fg-gold-soft"
+							>
 								Ver como funciona
-							</button>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -71,7 +101,7 @@ export default function Home() {
 					</ul>
 				</div>
 
-				<div className="mt-16 max-w-3xl text-left">
+				<section id="como-funciona" className="mt-16 max-w-3xl text-left">
 					<h2 className="text-2xl sm:text-3xl font-semibold mb-4">
 						Como funciona trabalhar comigo
 					</h2>
@@ -122,7 +152,7 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-				</div>
+				</section>
 
 				<section className="mt-16 max-w-3xl text-left">
 					<h2 className="text-2xl sm:text-3xl font-semibold mb-4">
