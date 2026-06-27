@@ -30,7 +30,7 @@ export default function Contact() {
               Solicite uma análise
             </span>
 
-            <h2 className="text-4xl sm:text-5xlfont-bold mt-6">
+            <h2 className="text-4xl sm:text-5xl font-bold mt-6">
               Vamos transformar sua presença digital.
             </h2>
 

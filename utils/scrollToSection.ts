@@ -1,10 +1,19 @@
 export function scrollToSection(id: string) {
-  const element = document.querySelector(id);
+  const targetId = id.startsWith("#") ? id.slice(1) : id;
 
-  if (!element) return;
+  const section = document.getElementById(targetId);
 
-  element.scrollIntoView({
+  if (!section) return;
+
+  const offset = 90;
+
+  const top =
+    section.getBoundingClientRect().top +
+    window.pageYOffset -
+    offset;
+
+  window.scrollTo({
+    top,
     behavior: "smooth",
-    block: "start",
   });
 }
