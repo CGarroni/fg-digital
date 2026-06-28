@@ -1,11 +1,15 @@
 "use client";
 
 import { Mail, MessageCircle, ArrowRight } from "lucide-react";
+import Input from "@/components/ui/Input";
+import Button from "@/components/ui/Button";
+import Textarea from "@/components/ui/Textarea";
+
 
 export default function Contact() {
   return (
     <section
-      id="contact"
+      id="contact"  
       className="section-padding"
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -35,7 +39,7 @@ export default function Contact() {
             </h2>
 
             <p className="text-zinc-400 mt-6 text-lg">
-              Receba uma análise gratuita e descubra como sua empresa pode transmitir mais confiança, autoridade e gerar mais oportunidades.
+              Receba uma análise personalizada da presença digital da sua empresa e descubra            oportunidades para transmitir mais confiança, fortalecer sua marca e conquistar novos clientes.
             </p>
 
             <div className="mt-10 space-y-6">
@@ -56,80 +60,35 @@ export default function Contact() {
 
           <form className="space-y-5">
 
-            <input
+            <Input
               placeholder="Nome"
-              className="
-              w-full
-              bg-black/30
-              border
-              border-white/10
-              rounded-xl
-              p-4
-              outline-none
-              "
+              type="text"
             />
 
-            <input
+            <Input
               placeholder="Empresa"
-              className="
-              w-full
-              bg-black/30
-              border
-              border-white/10
-              rounded-xl
-              p-4
-              outline-none
-              "
+              type="text"
             />
 
-            <input
+            <Input
               placeholder="WhatsApp"
-              className="
-              w-full
-              bg-black/30
-              border
-              border-white/10
-              rounded-xl
-              p-4
-              outline-none
-              "
+              type="tel"
             />
 
-            <textarea
+
+
+            <Textarea
               rows={5}
               placeholder="Conte um pouco sobre seu projeto"
-              className="
-              w-full
-              bg-black/30
-              border
-              border-white/10
-              rounded-xl
-              p-4
-              outline-none
-              "
             />
 
-            <button
-              className="
-              w-full
-              bg-[#D4AF37]
-              text-black
-              font-semibold
-              py-4
-              rounded-2xl
-              flex
-              justify-center
-              items-center
-              gap-2
-              hover:bg-[#E6C766]
-              transition
-              cursor-pointer
-              "
-            >
+            <Button
+              type="submit"
+              fullWidth
+          >
               Solicitar Análise Gratuita
-              <ArrowRight size={18} />
-            </button>
-
+              {<ArrowRight size={18} />}
+            </Button>
           </form>
 
         </div>

@@ -10,7 +10,7 @@ export default function HeroShowcase() {
 			<div
 				className="
         relative
-        h-[500px]
+        h-125
         rounded-4xl
         overflow-hidden
         border
@@ -31,7 +31,7 @@ export default function HeroShowcase() {
 					className="
           absolute
           inset-0
-          bg-gradient-to-t
+          bg-linear-to-t
           from-black/40
           via-transparent
           to-transparent
@@ -42,7 +42,7 @@ export default function HeroShowcase() {
 				<div
 					className="
           absolute
-          -left-0
+          left-0
           -bottom-6
           bg-black/60
           backdrop-blur-xl
@@ -68,7 +68,7 @@ export default function HeroShowcase() {
 				<div
 					className="
           absolute
-          -right-0
+          right-0
           -bottom-6
           bg-black/60
           backdrop-blur-xl

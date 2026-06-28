@@ -1,16 +1,17 @@
 "use client";
 
 import clsx from "clsx";
-import { TextareaHTMLAttributes } from "react";
+import { SelectHTMLAttributes } from "react";
 
-type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
+type SelectProps = SelectHTMLAttributes<HTMLSelectElement>;
 
-export default function Textarea({
+export default function Select({
   className,
+  children,
   ...props
-}: TextareaProps) {
+}: SelectProps) {
   return (
-    <textarea
+    <select
       className={clsx(
         `
         w-full
@@ -21,10 +22,9 @@ export default function Textarea({
         p-4
         outline-none
         text-white
-        placeholder:text-zinc-500
         transition-all
         duration-300
-        resize-none
+        cursor-pointer
         focus:border-[#D4AF37]
         focus:ring-2
         focus:ring-[#D4AF37]/20
@@ -32,6 +32,8 @@ export default function Textarea({
         className
       )}
       {...props}
-    />
+    >
+      {children}
+    </select>
   );
 }

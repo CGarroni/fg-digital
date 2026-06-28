@@ -6,19 +6,40 @@ import { scrollToSection } from "@/utils/scrollToSection";
 
 type ButtonProps = {
   children: ReactNode;
+
+  // Comportamento
   sectionId?: string;
   onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+
+  // Aparência
   variant?: "primary" | "secondary";
   size?: "sm" | "md" | "lg";
+  fullWidth?: boolean;
+
+  // Estado
+  disabled?: boolean;
+  loading?: boolean;
+
+  // Conteúdo
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
+
   className?: string;
-};
+};;
 
 export default function Button({
   children,
   sectionId,
   onClick,
+  type = "button",
   variant = "primary",
   size = "md",
+  fullWidth = false,
+  disabled = false,
+  loading = false,
+  leftIcon,
+  rightIcon,
   className,
 }: ButtonProps) {
   const classes = clsx(
@@ -34,20 +55,25 @@ export default function Button({
 
       "border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black":
         variant === "secondary",
+
+      "w-full": fullWidth,
+
+      "opacity-60 cursor-not-allowed hover:scale-100":
+      disabled || loading,
     },
 
     className
   );
 
   const handleClick = () => {
-    if (sectionId) {
-      scrollToSection(sectionId);
-    }
+  if (disabled || loading) return;
 
-    if (onClick) {
-      onClick();
-    }
-  };
+  if (sectionId) {
+    scrollToSection(sectionId);
+  }
+
+  onClick?.();
+};
 
   return (
     <button type="button" onClick={handleClick} className={classes}>
