@@ -3,20 +3,20 @@
 import clsx from "clsx";
 import { InputHTMLAttributes } from "react";
 
-type InputProps = InputHTMLAttributes<HTMLInputElement>;
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+	error?: string;
+};
 
-export default function Input({
-  className,
-  ...props
-}: InputProps) {
-  return (
-    <input
-      className={clsx(
-        `
+export default function Input({ error, className, ...props }: InputProps) {
+	return (
+		<div>
+			<input
+				className={clsx(
+					`
         w-full
         bg-black/30
         border
-        border-white/10
+        ${error ? "border-red-500" : "border-white/10"}
         rounded-xl
         p-4
         outline-none
@@ -28,9 +28,12 @@ export default function Input({
         focus:ring-2
         focus:ring-[#D4AF37]/20
         `,
-        className
-      )}
-      {...props}
-    />
-  );
+					className,
+				)}
+				{...props}
+			/>
+
+			{error && <p className="mt-2 text-sm text-red-500">{error}</p>}
+		</div>
+	);
 }

@@ -3,20 +3,24 @@
 import clsx from "clsx";
 import { TextareaHTMLAttributes } from "react";
 
-type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
+type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
+	error?: string;
+};
 
 export default function Textarea({
-  className,
-  ...props
+	error,
+	className,
+	...props
 }: TextareaProps) {
-  return (
+	return (
+  <div>
     <textarea
       className={clsx(
-        `
+				`
         w-full
         bg-black/30
         border
-        border-white/10
+        
         rounded-xl
         p-4
         outline-none
@@ -29,9 +33,19 @@ export default function Textarea({
         focus:ring-2
         focus:ring-[#D4AF37]/20
         `,
-        className
-      )}
-      {...props}
-    />
-  );
+        error
+    ? "border-red-500 focus:ring-red-500/20"
+    : "border-white/10 focus:border-[#D4AF37] focus:ring-[#D4AF37]/20",
+				className,
+			)}
+			{...props}
+		/>
+
+    {error && (
+      <p className="mt-2 text-sm text-red-500">
+        {error}
+      </p>
+    )}
+  </div>
+);
 }
