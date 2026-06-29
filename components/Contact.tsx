@@ -1,9 +1,7 @@
 "use client";
 
 import { Mail, MessageCircle, ArrowRight } from "lucide-react";
-import Input from "@/components/ui/Input";
-import Button from "@/components/ui/Button";
-import Textarea from "@/components/ui/Textarea";
+import ContactForm from "@/components/ContactForm";
 
 
 export default function Contact() {
@@ -58,38 +56,7 @@ export default function Contact() {
 
           </div>
 
-          <form className="space-y-5">
-
-            <Input
-              placeholder="Nome"
-              type="text"
-            />
-
-            <Input
-              placeholder="Empresa"
-              type="text"
-            />
-
-            <Input
-              placeholder="WhatsApp"
-              type="tel"
-            />
-
-
-
-            <Textarea
-              rows={5}
-              placeholder="Conte um pouco sobre seu projeto"
-            />
-
-            <Button
-              type="submit"
-              fullWidth
-          >
-              Solicitar Análise Gratuita
-              {<ArrowRight size={18} />}
-            </Button>
-          </form>
+          <ContactForm />
 
         </div>
 
