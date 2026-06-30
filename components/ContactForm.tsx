@@ -1,10 +1,12 @@
 "use client";
 
-import { Mail, MessageCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
 import Textarea from "@/components/ui/Textarea";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+import FormFeedback from "@/components/ui/FormFeedback";
 
 type ContactFormData = {
 	name: string;
@@ -17,11 +19,22 @@ export default function ContactForm() {
 	const {
 		register,
 		handleSubmit,
-		formState: { errors },
+		reset,
+		formState: { errors, isSubmitting },
 	} = useForm<ContactFormData>();
-	const onSubmit = (data: ContactFormData) => {
+
+	const [successMessage, setSuccessMessage] = useState("");
+
+	const onSubmit = async (data: ContactFormData) => {
 		console.log(data);
+
+		await new Promise((resolve) => setTimeout(resolve, 2000));
+
+		setSuccessMessage("Solicitação enviada com sucesso!");
+
+		reset();
 	};
+
 	return (
 		<form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
 			<Input
@@ -60,7 +73,11 @@ export default function ContactForm() {
 				})}
 			/>
 
-			<Button type="submit" fullWidth>
+			{successMessage && (
+				<FormFeedback type="success" message={successMessage} />
+			)}
+
+			<Button type="submit" fullWidth loading={isSubmitting}>
 				Solicitar Análise Gratuita
 				{<ArrowRight size={18} />}
 			</Button>

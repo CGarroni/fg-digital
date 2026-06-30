@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { ReactNode } from "react";
 import { scrollToSection } from "@/utils/scrollToSection";
+import Spinner from "./Spinner";
 
 type ButtonProps = {
 	children: ReactNode;
@@ -20,6 +21,7 @@ type ButtonProps = {
 	// Estado
 	disabled?: boolean;
 	loading?: boolean;
+	loadingText?: string;
 
 	// Conteúdo
 	leftIcon?: ReactNode;
@@ -38,6 +40,7 @@ export default function Button({
 	fullWidth = false,
 	disabled = false,
 	loading = false,
+	loadingText = "Enviando...",
 	leftIcon,
 	rightIcon,
 	className,
@@ -81,11 +84,14 @@ export default function Button({
 			className={classes}
 			disabled={disabled || loading}
 		>
-			{leftIcon}
-
-			{loading ? "Carregando..." : children}
-
-			{rightIcon}
+			{loading ? (
+				<>
+					<Spinner size="sm" />
+					<span>{loadingText}</span>
+				</>
+			) : (
+				children
+			)}
 		</button>
 	);
 }
