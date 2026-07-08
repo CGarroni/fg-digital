@@ -94,40 +94,38 @@ export default function Hero() {
                 text-[#D4AF37]
                 "
 							>
-								Presença Digital Premium
+								Estratégia • Design • Engenharia
 							</span>
 						</div>
 
 						<h1
 							className="
-              text-4xl sm:text-5xl md:text-7xl
-              font-bold
-              leading-[0.95]
-              "
+  text-4xl sm:text-5xl md:text-7xl
+  font-bold
+  leading-[0.95]
+  "
 						>
 							Transformamos
-							<span className="gold-gradient block">visitantes em</span>
-							oportunidades de negócio.
+							<span className="gold-gradient block">empresas em</span>
+							referências digitais.
 						</h1>
 
 						<p
 							className="
               text-zinc-400
-              text-lg 
+              text-lg
               md:text-xl
               mt-8
               max-w-xl
               "
 						>
-							Criamos experiências digitais premium que aumentam a confiança,
-							fortalecem sua marca e ajudam sua empresa a gerar novas
-							oportunidades.
+							Criamos produtos digitais que unem estratégia, design e engenharia
+							para fortalecer sua marca, gerar confiança e transformar
+							visitantes em oportunidades de negócio.
 						</p>
 
 						<div className="flex flex-row flex-wrap gap-4 mt-10">
-							<Button sectionId="contact">
-								Solicitar Análise Gratuita
-							</Button>
+							<Button sectionId="contact">Solicitar Análise Gratuita</Button>
 
 							<Button sectionId="process">
 								Conheça Nosso Processo

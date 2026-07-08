@@ -56,9 +56,9 @@ export default function HeroShowcase() {
 						<Globe size={18} className="text-[#D4AF37]" />
 
 						<div>
-							<p className="text-xs text-zinc-500">Especialidade</p>
+							<p className="text-xs text-zinc-500">Método</p>
 
-							<p className="text-sm font-medium">Presença Digital</p>
+							<p className="text-sm font-medium">Estratégia + Design</p>
 						</div>
 					</div>
 				</div>
@@ -82,9 +82,9 @@ export default function HeroShowcase() {
 						<BarChart3 size={18} className="text-[#D4AF37]" />
 
 						<div>
-							<p className="text-xs text-zinc-500">Objetivo</p>
+							<p className="text-xs text-zinc-500">Resultado</p>
 
-							<p className="text-sm font-medium">Conversão</p>
+							<p className="text-sm font-medium">Autoridade + Conversão</p>
 						</div>
 					</div>
 				</div>
