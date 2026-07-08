@@ -61,7 +61,7 @@ export default function Hero() {
 			/>
 
 			<div className="max-w-7xl mx-auto px-6">
-				<div className="grid lg:grid-cols-[1fr_1.1fr] gap-12 items-center">
+				<div className="grid lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-12 items-center">
 					<div>
 						<div
 							className="

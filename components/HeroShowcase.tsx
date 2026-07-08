@@ -9,16 +9,19 @@ export default function HeroShowcase() {
 		<div className="relative">
 			<div
 				className="
-        relative
-        h-125
-        rounded-4xl
-        overflow-hidden
-        border
-        border-[#D4AF37]/10
-        shadow-[0_0_80px_rgba(212,175,55,0.08)]
-        "
+					relative
+					h-90
+					sm:h-115
+		lg:h-125
+		xl:h-155
+					rounded-3xl
+					lg:rounded-4xl
+					overflow-hidden
+					border
+					border-[#D4AF37]/10
+					shadow-[0_0_80px_rgba(212,175,55,0.08)]
+				"
 			>
-        
 				<Image
 					src="/images/hero/hero-premium.png"
 					alt="FG Digital"
@@ -43,7 +46,7 @@ export default function HeroShowcase() {
 					className="
           absolute
           left-0
-          -bottom-6
+          -bottom-4
           bg-black/60
           backdrop-blur-xl
           border
@@ -69,7 +72,7 @@ export default function HeroShowcase() {
 					className="
           absolute
           right-0
-          -bottom-6
+          -bottom-4
           bg-black/60
           backdrop-blur-xl
           border

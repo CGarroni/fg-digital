@@ -32,6 +32,10 @@ export default function ContactForm() {
 
 		setSuccessMessage("Solicitação enviada com sucesso!");
 
+		setTimeout(() => {
+			setSuccessMessage("");
+		}, 2000);
+
 		reset();
 	};
 
@@ -43,6 +47,7 @@ export default function ContactForm() {
 				error={errors.name?.message}
 				{...register("name", {
 					required: "Informe seu nome.",
+					onChange: () => setSuccessMessage(""),
 				})}
 			/>
 
@@ -52,6 +57,7 @@ export default function ContactForm() {
 				error={errors.company?.message}
 				{...register("company", {
 					required: "Informe sua empresa.",
+					onChange: () => setSuccessMessage(""),
 				})}
 			/>
 
@@ -61,6 +67,7 @@ export default function ContactForm() {
 				error={errors.phone?.message}
 				{...register("phone", {
 					required: "Informe seu WhatsApp.",
+					onChange: () => setSuccessMessage(""),
 				})}
 			/>
 
@@ -70,6 +77,7 @@ export default function ContactForm() {
 				error={errors.message?.message}
 				{...register("message", {
 					required: "Conte um pouco sobre seu projeto.",
+					onChange: () => setSuccessMessage(""),
 				})}
 			/>
 

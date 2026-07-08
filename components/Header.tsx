@@ -4,6 +4,7 @@ import { navLinks } from "@/lib/constants";
 import { scrollToSection } from "@/utils/scrollToSection";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
+import MobileMenu from "@/components/MobileMenu";
 
 export default function Header() {
 	return (
@@ -15,6 +16,7 @@ export default function Header() {
 						alt="FG"
 						width={56}
 						height={56}
+						className="w-10 h-10 md:w-14 md:h-14"
 					/>
 
 					<nav className="hidden md:flex gap-10">
@@ -29,7 +31,11 @@ export default function Header() {
 						))}
 					</nav>
 
-					<Button sectionId="contact">Solicitar Análise Gratuita</Button>
+					<div className="hidden md:block">
+						<Button sectionId="contact">Solicitar Análise Gratuita</Button>
+					</div>
+
+					<MobileMenu />
 				</div>
 			</div>
 		</header>
