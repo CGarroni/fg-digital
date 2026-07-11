@@ -8,6 +8,7 @@ export default function Hero() {
 	return (
 		<section
 			id="hero"
+      aria-labelledby="hero-title"
 			className="
       min-h-screen
       flex
@@ -79,8 +80,8 @@ export default function Hero() {
 						>
 							<div
 								className="
-                w-2
-                h-2
+                w-1
+                h-1
                 rounded-full
                 bg-[#D4AF37]
                 "
@@ -94,16 +95,16 @@ export default function Hero() {
                 text-[#D4AF37]
                 "
 							>
-								Estratégia • Design • Engenharia
+							  Crescimento • Prestígio • Performance
 							</span>
 						</div>
 
-						<h1
+						<h1 id="hero-title"
 							className="
-  text-4xl sm:text-5xl md:text-7xl
-  font-bold
-  leading-[0.95]
-  "
+              text-4xl sm:text-5xl md:text-7xl
+              font-bold
+              leading-[0.95]
+              "
 						>
 							Transformamos
 							<span className="gold-gradient block">empresas em</span>
@@ -119,17 +120,20 @@ export default function Hero() {
               max-w-xl
               "
 						>
-							Criamos produtos digitais que unem estratégia, design e engenharia
-							para fortalecer sua marca, gerar confiança e transformar
-							visitantes em oportunidades de negócio.
+							Desenvolvemos experiências digitais que fortalecem a credibilidade
+							da sua empresa, aumentam a confiança dos seus clientes e
+							transformam visitantes em oportunidades reais de negócio.
 						</p>
 
 						<div className="flex flex-row flex-wrap gap-4 mt-10">
 							<Button sectionId="contact">Solicitar Análise Gratuita</Button>
 
-							<Button sectionId="process">
+							<Button
+								sectionId="process"
+								variant="secondary"
+								rightIcon={<ArrowRight size={18} />}
+							>
 								Conheça Nosso Processo
-								<ArrowRight size={18} />
 							</Button>
 						</div>
 					</div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { siteConfig } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,11 +14,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title:
-    "Transformamos visitantes em oportunidades | FG Digital",
+  title: {
+    default: siteConfig.title,
+    template: "%s | FG Digital",
+  },
 
-  description:
-    "Experiências digitais premium para empresas que desejam transmitir confiança, autoridade e gerar oportunidades.",
+  description: siteConfig.description,
+
+  keywords: [
+    "FG Digital",
+    "Landing Page",
+    "Site Institucional",
+    "Criação de Sites",
+    "Desenvolvimento Web",
+    "Next.js",
+    "Presença Digital",
+    "Conversão",
+    "Marketing Digital",
+  ],
+
+  authors: [
+    {
+      name: siteConfig.author,
+    },
+  ],
+
+  creator: siteConfig.name,
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

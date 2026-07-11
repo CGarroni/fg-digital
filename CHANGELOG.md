@@ -29,6 +29,10 @@ Todas as alterações relevantes deste projeto serão documentadas aqui.
 - Seção de Processo
 - Seção de Diferenciais
 - Seção de Contato
+- MobileMenu responsivo
+- Spinner reutilizável
+- Feedback visual de envio
+- Mensagem de sucesso no formulário
 
 ### Alterado
 
@@ -45,6 +49,11 @@ Todas as alterações relevantes deste projeto serão documentadas aqui.
 - Evolução do componente Input para exibir mensagens e estados visuais de erro
 - Evolução do componente Textarea para exibir mensagens e estados visuais de erro
 - Refatoração do HeroShowcase
+- Hero Premium
+- HeroShowcase responsivo
+- Header Mobile
+- UX do formulário
+- Layout Mobile
 
 
 ### Corrigido
@@ -56,3 +65,7 @@ Todas as alterações relevantes deste projeto serão documentadas aqui.
 - Integração do Button com formulários (submit)
 - Fluxo de envio do formulário
 - Estados de loading durante submissão
+- Limpeza automática do formulário
+- Persistência da mensagem de sucesso
+- Layout do Hero em dispositivos móveis
+- Espaçamento do HeroShowcase

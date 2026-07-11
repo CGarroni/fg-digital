@@ -46,22 +46,42 @@ export default function Button({
 	className,
 }: ButtonProps) {
 	const classes = clsx(
-		"inline-flex items-center justify-center font-semibold transition-all duration-300 rounded-2xl cursor-pointer",
+		// Base
+		"inline-flex items-center justify-center gap-2 rounded-2xl font-semibold cursor-pointer",
+		"transition-[transform,box-shadow,background-color,border-color,color]",
+		"duration-300",
+		"focus-visible:outline-none",
+		"focus-visible:ring-2",
+		"focus-visible:ring-[#D4AF37]",
+		"focus-visible:ring-offset-2",
+		"focus-visible:ring-offset-[#050505]",
+		"active:scale-[0.98]",
 
+		// Tamanho
 		{
 			"px-5 py-3 text-sm": size === "sm",
 			"px-7 py-4 text-base": size === "md",
 			"px-8 py-5 text-lg": size === "lg",
+		},
 
-			"bg-gradient-to-r from-[#D4AF37] to-[#E6C766] text-black hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,.35)]":
+		// Variantes
+		{
+			"bg-gradient-to-r from-[#D4AF37] to-[#E6C766] text-black shadow-[0_6px_18px_rgba(212,175,55,.18)] hover:scale-[1.02] hover:shadow-[0_0_26px_rgba(212,175,55,.35)]":
 				variant === "primary",
 
-			"border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black":
+			"border border-white/15 bg-transparent text-white hover:border-[#D4AF37] hover:text-[#D4AF37] hover:bg-[#D4AF37]/5":
 				variant === "secondary",
+		},
 
+		// Estados
+		{
+			"opacity-60 cursor-not-allowed hover:scale-100": disabled,
+			"opacity-60 cursor-progress hover:scale-100": loading,
+		},
+
+		// Layout
+		{
 			"w-full": fullWidth,
-
-			"opacity-60 cursor-not-allowed hover:scale-100": disabled || loading,
 		},
 
 		className,
@@ -83,6 +103,8 @@ export default function Button({
 			onClick={handleClick}
 			className={classes}
 			disabled={disabled || loading}
+			aria-disabled={disabled || loading}
+			aria-busy={loading}
 		>
 			{loading ? (
 				<>
@@ -90,7 +112,21 @@ export default function Button({
 					<span>{loadingText}</span>
 				</>
 			) : (
-				children
+				<>
+					{leftIcon && (
+						<span className="flex items-center">
+							{leftIcon}
+						</span>
+					)}
+
+					<span>{children}</span>
+
+					{rightIcon && (
+						<span className="flex items-center">
+							{rightIcon}
+						</span>
+					)}
+				</>
 			)}
 		</button>
 	);

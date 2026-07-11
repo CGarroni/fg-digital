@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Floating from "@/components/Floating";
 import { Globe, BarChart3 } from "lucide-react";
+import InfoBadge from "@/components/ui/InfoBadge";
 
 export default function HeroShowcase() {
 	return (
-		<div className="relative">
+		<div className="relative isolate">
 			<div
 				className="
 					relative
@@ -24,7 +25,7 @@ export default function HeroShowcase() {
 			>
 				<Image
 					src="/images/hero/hero-premium.png"
-					alt="FG Digital"
+					alt="Mockup de website premium desenvolvido pela FG Digital"
 					fill
 					priority
 					className="object-cover"
@@ -42,54 +43,22 @@ export default function HeroShowcase() {
 				/>
 			</div>
 			<Floating>
-				<div
-					className="
-          absolute
-          left-0
-          -bottom-4
-          bg-black/60
-          backdrop-blur-xl
-          border
-          border-[#D4AF37]/10
-          rounded-2xl
-          p-4
-          "
-				>
-					<div className="flex items-center gap-3">
-						<Globe size={18} className="text-[#D4AF37]" />
-
-						<div>
-							<p className="text-xs text-zinc-500">Método</p>
-
-							<p className="text-sm font-medium">Estratégia + Design</p>
-						</div>
-					</div>
+				<div className="absolute left-4 -bottom-0">
+					<InfoBadge
+						icon={Globe}
+						title="Método"
+						value="Estratégia + Design"
+					/>
 				</div>
 			</Floating>
 
 			<Floating>
-				<div
-					className="
-          absolute
-          right-0
-          -bottom-4
-          bg-black/60
-          backdrop-blur-xl
-          border
-          border-[#D4AF37]/10
-          rounded-2xl
-          p-4
-          "
-				>
-					<div className="flex items-center gap-3">
-						<BarChart3 size={18} className="text-[#D4AF37]" />
-
-						<div>
-							<p className="text-xs text-zinc-500">Resultado</p>
-
-							<p className="text-sm font-medium">Autoridade + Conversão</p>
-						</div>
-					</div>
+				<div className="absolute right-4 -bottom-0">
+					<InfoBadge
+						icon={BarChart3}
+						title="Resultado"
+						value="Autoridade + Conversão"
+					/>
 				</div>
 			</Floating>
 		</div>
