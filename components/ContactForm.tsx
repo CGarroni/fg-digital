@@ -4,24 +4,33 @@ import { ArrowRight } from "lucide-react";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
 import Textarea from "@/components/ui/Textarea";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { useState } from "react";
 import FormFeedback from "@/components/ui/FormFeedback";
+import RadioGroup from "@/components/ui/RadioGroup";
 
 type ContactFormData = {
 	name: string;
-	company: string;
+	company?: string;
 	phone: string;
+	hasWebsite: "yes" | "no";
+	service: "landing" | "website" | "not-sure";
 	message: string;
 };
 
 export default function ContactForm() {
 	const {
 		register,
+		control,
 		handleSubmit,
 		reset,
 		formState: { errors, isSubmitting },
-	} = useForm<ContactFormData>();
+	} = useForm<ContactFormData>({
+		defaultValues: {
+			hasWebsite: "no",
+			service: "landing",
+		},
+	});
 
 	const [successMessage, setSuccessMessage] = useState("");
 
@@ -52,11 +61,10 @@ export default function ContactForm() {
 			/>
 
 			<Input
-				placeholder="Empresa"
+				placeholder="Empresa (opcional)"
 				type="text"
 				error={errors.company?.message}
 				{...register("company", {
-					required: "Informe sua empresa.",
 					onChange: () => setSuccessMessage(""),
 				})}
 			/>
@@ -71,9 +79,67 @@ export default function ContactForm() {
 				})}
 			/>
 
+			<Controller
+				control={control}
+				name="hasWebsite"
+				rules={{
+					required: "Informe se você já possui um site.",
+				}}
+				render={({ field }) => (
+					<RadioGroup
+						label="Você já possui um site?"
+						name={field.name}
+						value={field.value}
+						onChange={field.onChange}
+						options={[
+							{
+								value: "yes",
+								label: "Sim",
+							},
+							{
+								value: "no",
+								label: "Não",
+							},
+						]}
+						error={errors.hasWebsite?.message}
+					/>
+				)}
+			/>
+
+			<Controller
+				control={control}
+				name="service"
+				rules={{
+					required: "Selecione o serviço desejado.",
+				}}
+				render={({ field }) => (
+					<RadioGroup
+						label="Qual solução procura?"
+						name={field.name}
+						value={field.value}
+						onChange={field.onChange}
+						options={[
+							{
+								value: "landing",
+								label: "Landing Page",
+							},
+							{
+								value: "website",
+								label: "Site Institucional",
+							},
+							{
+								value: "not-sure",
+								label: "Ainda não tenho certeza",
+							},
+						]}
+						error={errors.service?.message}
+					/>
+				)}
+			/>
+
 			<Textarea
 				rows={5}
-				placeholder="Conte um pouco sobre seu projeto"
+				placeholder="Conte brevemente sobre sua empresa, seus objetivos e como podemos ajudar."
 				error={errors.message?.message}
 				{...register("message", {
 					required: "Conte um pouco sobre seu projeto.",

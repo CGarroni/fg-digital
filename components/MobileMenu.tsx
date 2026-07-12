@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { navLinks } from "@/lib/constants";
+import { navigation } from "@/lib/navigation";
 import { scrollToSection } from "@/utils/scrollToSection";
 import Button from "@/components/ui/Button";
 
@@ -29,7 +29,7 @@ duration-300"
 			{isOpen && (
 				<div className="absolute top-20 left-0 w-full bg-black backdrop-blur-xl border-t border-white/10 md:hidden">
 					<div className="flex flex-col px-6 py-6 gap-8">
-						{navLinks.map((link) => (
+						{navigation.map((link) => (
 							<button
 								key={link.href}
 								onClick={() => handleNavigate(link.href.slice(1))}

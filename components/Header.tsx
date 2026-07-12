@@ -1,6 +1,6 @@
 "use client";
 
-import { navLinks } from "@/lib/constants";
+import { navigation } from "@/lib/navigation";
 import { scrollToSection } from "@/utils/scrollToSection";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
@@ -20,7 +20,7 @@ export default function Header() {
 					/>
 
 					<nav className="hidden md:flex gap-10">
-						{navLinks.map((link) => (
+						{navigation.map((link) => (
 							<button
 								key={link.href}
 								onClick={() => scrollToSection(link.href.slice(1))}
