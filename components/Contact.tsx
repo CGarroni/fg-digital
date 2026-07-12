@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, MessageCircle, ArrowRight } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 

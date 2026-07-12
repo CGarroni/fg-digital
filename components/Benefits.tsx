@@ -3,6 +3,7 @@
 import { ShieldCheck, TrendingUp, Globe } from "lucide-react";
 import AmbientBackground from "@/components/AmbientBackground";
 import BenefitCard from "@/components/ui/BenefitCard";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const benefits = [
 	{
@@ -37,20 +38,11 @@ export default function Benefits() {
 			<AmbientBackground />
 
 			<div className="max-w-7xl mx-auto px-6">
-				<div className=" text-center max-w-3xl mx-auto">
-					<span className="text-[#D4AF37] uppercase tracking-[0.25em] text-sm">
-						Benefícios
-					</span>
-
-					<h2 className="text-4xl md:text-5xl font-bold mt-6">
-						Sua empresa merece mais do que um site.
-					</h2>
-
-					<p className="text-zinc-300 mt-6 text-lg">
-						Sua presença digital deve transmitir confiança, fortalecer sua marca
-						e trabalhar todos os dias para gerar novas oportunidades de negócio.
-					</p>
-				</div>
+				<SectionHeader
+    eyebrow="Benefícios"
+    title="Sua empresa merece mais do que um site."
+    description="Sua presença digital deve transmitir confiança, fortalecer sua marca e trabalhar todos os dias para gerar novas oportunidades de negócio."
+/>
 
 				<div className="grid md:grid-cols-3 gap-8 mt-20">
 					{benefits.map((benefit, index) => (

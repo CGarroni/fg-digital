@@ -69,3 +69,26 @@ Todas as alterações relevantes deste projeto serão documentadas aqui.
 - Persistência da mensagem de sucesso
 - Layout do Hero em dispositivos móveis
 - Espaçamento do HeroShowcase
+
+### Adicionado
+
+- Componente reutilizável SectionHeader
+- Componente reutilizável ServiceCard
+- Componente reutilizável FAQItem
+- Estrutura inicial do componente RadioGroup
+- Nova seção de Serviços
+- Nova seção de Perguntas Frequentes (FAQ)
+- Estrutura de dados centralizada em lib/data
+
+### Alterado
+
+- Refatoração da seção Benefits utilizando SectionHeader e BenefitCard
+- Refatoração da seção Process utilizando SectionHeader e ProcessCard
+- Organização da Landing com separação entre dados e interface
+- Estrutura da página principal (app/page.tsx)
+
+### Melhorado
+
+- Reutilização dos componentes da FG UI
+- Consistência visual entre as seções
+- Organização do projeto para futura FG Landing Engine

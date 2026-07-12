@@ -7,6 +7,8 @@ import WhyChoose from "@/components/WhyChoose";
 import Authority from "@/components/Authority";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Services from "@/components/Services";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
   return (
@@ -18,6 +20,8 @@ export default function Home() {
         <Stats />
         <Benefits />
         <Process />
+        <Services />
+        <FAQ />
         <WhyChoose />
         <Authority />
         <Contact />

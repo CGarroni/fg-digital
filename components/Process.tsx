@@ -1,6 +1,7 @@
 "use client";
 
 import ProcessCard from "@/components/ui/ProcessCard";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const steps = [
 	{
@@ -29,15 +30,11 @@ export default function Process() {
 	return (
 		<section id="process" className="section-padding">
 			<div className="max-w-7xl mx-auto px-6">
-				<div className="text-center max-w-3xl mx-auto">
-					<span className="text-[#D4AF37] uppercase tracking-[0.25em] text-sm">
-						NOSSO MÉTODO
-					</span>
-
-					<h2 className="text-4xl md:text-5xl font-bold mt-6">
-						Um processo pensado para transformar estratégia em resultados reais.
-					</h2>
-				</div>
+				<SectionHeader
+					eyebrow="Nosso Método"
+					title="Um processo pensado para transformar estratégia em resultados reais."
+					description="Cada etapa foi planejada para entender seu negócio, desenvolver a melhor solução e entregar uma presença digital que gere resultados consistentes."
+				/>
 
 				<div className="grid md:grid-cols-4 gap-8 mt-20">
 					{steps.map((step, index) => (
