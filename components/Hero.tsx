@@ -8,14 +8,16 @@ export default function Hero() {
 	return (
 		<section
 			id="hero"
-      aria-labelledby="hero-title"
+			aria-labelledby="hero-title"
 			className="
       min-h-screen
       flex
-      items-center
+      items-start
+      lg:items-center
       relative
       overflow-hidden
-      pt-40 "
+      pt-32
+      md:pt-40 "
 		>
 			<div
 				className="
@@ -61,13 +63,14 @@ export default function Hero() {
       "
 			/>
 
-			<div className="max-w-7xl mx-auto px-6">
+			<div className="max-w-7xl mx-auto px-6 w-full">
 				<div className="grid lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-12 items-center">
 					<div>
 						<div
 							className="
               inline-flex
-              items-center
+              items-start
+              lg:items-center
               gap-2
               px-4
               py-2
@@ -95,11 +98,12 @@ export default function Hero() {
                 text-[#D4AF37]
                 "
 							>
-							  Crescimento • Prestígio • Performance
+								Crescimento • Prestígio • Performance
 							</span>
 						</div>
 
-						<h1 id="hero-title"
+						<h1
+							id="hero-title"
 							className="
               text-4xl sm:text-5xl md:text-7xl
               font-bold

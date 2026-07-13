@@ -16,27 +16,30 @@ export default function InfoBadge({
   return (
     <div
       className={`
+        w-full
+        max-w-45
         bg-black/60
         backdrop-blur-xl
         border
         border-[#D4AF37]/10
         rounded-2xl
-        p-4
+        px-4
+        py-3
         ${className}
       `}
     >
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2.5">
         <Icon
-          size={18}
+          size={16}
           className="text-[#D4AF37] shrink-0"
         />
 
-        <div>
-          <p className="text-xs text-zinc-500">
+        <div className="leading-tight">
+          <p className="text-[11px] text-zinc-500">
             {title}
           </p>
 
-          <p className="text-sm font-medium">
+          <p className="text-sm font-semibold text-zinc-100">
             {value}
           </p>
         </div>

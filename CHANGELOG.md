@@ -79,6 +79,9 @@ Todas as alterações relevantes deste projeto serão documentadas aqui.
 - Nova seção de Serviços
 - Nova seção de Perguntas Frequentes (FAQ)
 - Estrutura de dados centralizada em lib/data
+- Componente reutilizável RadioGroup
+- Navegação centralizada em `navigation.ts`
+- Campos "Já possui um site?" e "Qual solução procura?" no formulário
 
 ### Alterado
 
@@ -86,9 +89,21 @@ Todas as alterações relevantes deste projeto serão documentadas aqui.
 - Refatoração da seção Process utilizando SectionHeader e ProcessCard
 - Organização da Landing com separação entre dados e interface
 - Estrutura da página principal (app/page.tsx)
+- ContactForm evoluído com RadioGroup
+- Campo Empresa passou a ser opcional
+- Header e MobileMenu utilizam fonte única de navegação
+- Melhorias na experiência do formulário
 
 ### Melhorado
 
 - Reutilização dos componentes da FG UI
 - Consistência visual entre as seções
 - Organização do projeto para futura FG Landing Engine
+
+## Refactor - Hero Showcase
+
+- Refatorado o posicionamento dos badges flutuantes.
+- Criado container responsivo para os InfoBadges.
+- Melhorado o espaçamento inferior do Hero Showcase.
+- Ajustadas alturas do mockup para melhor composição visual.
+- Eliminada a sobreposição dos badges em dispositivos móveis.
