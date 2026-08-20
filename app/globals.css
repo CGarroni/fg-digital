@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #0b0b0b;
+
+  --gold-primary: #d4af37;
+  --gold-light: #e6c766;
+  --gold-dark: #9b7a23;
+
+  --text-primary: #f5f5f5;
+  --text-secondary: #a1a1aa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+.gold-gradient {
+  background: linear-gradient(
+    135deg,
+    #d4af37,
+    #e6c766,
+    #9b7a23
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-padding {
+  padding: 120px 0;
+}
+
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.luxury-border {
+  position: relative;
+}
+
+.luxury-border::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  padding: 1px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.35),
+    transparent
+  );
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  mask-composite: exclude;
+}
+
+.gold-glow {
+  box-shadow:
+    0 0 40px rgba(212, 175, 55, 0.12),
+    0 0 80px rgba(212, 175, 55, 0.08);
+}
+
+::selection {
+  background: #d4af37;
+  color: black;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 999px;
+}
