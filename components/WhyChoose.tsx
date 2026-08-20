@@ -33,7 +33,7 @@ export default function WhyChoose() {
 						Por que escolher a FG Digital
 					</span>
 
-					<h2 className=" text-4xl sm:text-5xlfont-bold mt-6">
+					<h2 className=" text-4xl sm:text-5xl font-bold mt-6">
 						Sua presença digital deve transmitir o mesmo valor do seu trabalho.
 					</h2>
 				</div>
