@@ -28,7 +28,7 @@ export default function Stats() {
             border-white/5
             "
           >
-            <h3 className="text-4xl sm:text-5xlfont-bold gold-gradient">
+            <h3 className="text-4xl sm:text-5xl font-bold gold-gradient">
               Premium
             </h3>
 
@@ -50,7 +50,7 @@ export default function Stats() {
             border-white/5
             "
           >
-            <h3 className="text-4xl sm:text-5xlfont-bold gold-gradient">
+            <h3 className="text-4xl sm:text-5xl font-bold gold-gradient">
               UX
             </h3>
 
@@ -72,7 +72,7 @@ export default function Stats() {
             border-white/5
             "
           >
-            <h3 className="text-4xl sm:text-5xlfont-bold gold-gradient">
+            <h3 className="text-4xl sm:text-5xl font-bold gold-gradient">
               SEO
             </h3>
 

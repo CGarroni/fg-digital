@@ -23,7 +23,6 @@ export default function ContactForm() {
 		register,
 		control,
 		handleSubmit,
-		reset,
 		formState: { errors, isSubmitting },
 	} = useForm<ContactFormData>({
 		defaultValues: {
@@ -34,19 +33,11 @@ export default function ContactForm() {
 
 	const [successMessage, setSuccessMessage] = useState("");
 
-	const onSubmit = async (data: ContactFormData) => {
-		console.log(data);
-
-		await new Promise((resolve) => setTimeout(resolve, 2000));
-
-		setSuccessMessage("Solicitação enviada com sucesso!");
-
-		setTimeout(() => {
-			setSuccessMessage("");
-		}, 2000);
-
-		reset();
-	};
+	const onSubmit = () => {
+  setSuccessMessage(
+    "O envio será habilitado em breve. Enquanto isso, entre em contato pelos canais disponíveis."
+  );
+};
 
 	return (
 		<form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
