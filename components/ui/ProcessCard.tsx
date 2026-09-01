@@ -47,7 +47,7 @@ export default function ProcessCard({
 
       <h3 className="text-xl md:text-2xl font-semibold mt-6">{title}</h3>
 
-      <p className="mt-4 text-base leading-relaxed text-zinc-300">
+      <p className="mt-4 text-base leading-relaxed text-neutral-300">
         {description}
       </p>
 

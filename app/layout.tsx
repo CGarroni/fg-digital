@@ -45,6 +45,100 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.title,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+};
+
+/* ── JSON-LD structured data for Google ───────────────── */
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: siteConfig.name,
+  description: siteConfig.description,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/images/hero/fg-digital.png`,
+  image: `${siteConfig.url}${siteConfig.ogImage}`,
+  author: {
+    "@type": "Person",
+    name: siteConfig.author,
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Brasil",
+  },
+  knowsLanguage: ["pt-BR", "en"],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Soluções FG Digital",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Landing Page Premium",
+          description:
+            "Páginas de alta conversão projetadas para transformar visitantes em clientes.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Site Institucional",
+          description:
+            "Sites profissionais que transmitem credibilidade e fortalecem a marca da sua empresa.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Presença Digital Completa",
+          description:
+            "Solução escalável com automações, integrações e evolução contínua.",
+        },
+      },
+    ],
+  },
+  /* Placeholder fields for future LocalBusiness upgrade */
+  // telephone: "+55-XX-XXXXX-XXXX",
+  // address: {
+  //   "@type": "PostalAddress",
+  //   streetAddress: "",
+  //   addressLocality: "",
+  //   addressRegion: "",
+  //   postalCode: "",
+  //   addressCountry: "BR",
+  // },
+  // openingHoursSpecification: {
+  //   "@type": "OpeningHoursSpecification",
+  //   dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+  //   opens: "09:00",
+  //   closes: "18:00",
+  // },
 };
 
 export default function RootLayout({
@@ -57,6 +151,13 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
