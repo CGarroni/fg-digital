@@ -111,3 +111,13 @@ body {
   background: #d4af37;
   border-radius: 999px;
 }
+
+/* ── Premium pulse for highlighted plan border ───── */
+@keyframes premium-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

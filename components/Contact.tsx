@@ -36,7 +36,7 @@ export default function Contact() {
               </StaggerItem>
 
               <StaggerItem>
-                <p className="text-zinc-400 mt-6 text-lg">
+                <p className="text-neutral-300 mt-6 text-lg">
                   Receba uma análise personalizada da presença digital da sua
                   empresa e descubra oportunidades para transmitir mais
                   confiança, fortalecer sua marca e conquistar novos clientes.
