@@ -42,14 +42,8 @@ export default function Process() {
     if (reduce) return;
 
     const ctx = gsap.context(() => {
-      /* ── Sticky pin the left title on desktop only ──── */
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "bottom bottom",
-        pin: pinRef.current,
-        pinSpacing: false,
-      });
+      /* O título da esquerda usa CSS sticky (lg:sticky lg:top-32) —
+         confinado à seção, sem risco de sobrepor a próxima. */
 
       /* ── Fade each step based on scroll position ───── */
       const stepEls = stepsRef.current?.querySelectorAll(".process-step");

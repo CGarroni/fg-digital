@@ -10,6 +10,7 @@ type ButtonProps = {
 
 	// Comportamento
 	sectionId?: string;
+	href?: string;
 	onClick?: () => void;
 	type?: "button" | "submit" | "reset";
 
@@ -33,6 +34,7 @@ type ButtonProps = {
 export default function Button({
 	children,
 	sectionId,
+	href,
 	onClick,
 	type = "button",
 	variant = "primary",
@@ -97,6 +99,44 @@ export default function Button({
 		onClick?.();
 	};
 
+	const content = loading ? (
+		<>
+			<Spinner size="sm" />
+			<span>{loadingText}</span>
+		</>
+	) : (
+		<>
+			{leftIcon && (
+				<span className="flex items-center">
+					{leftIcon}
+				</span>
+			)}
+
+			<span>{children}</span>
+
+			{rightIcon && (
+				<span className="flex items-center">
+					{rightIcon}
+				</span>
+			)}
+		</>
+	);
+
+	if (href) {
+		return (
+			<a
+				href={href}
+				target="_blank"
+				rel="noopener noreferrer"
+				onClick={handleClick}
+				className={classes}
+				aria-disabled={disabled || loading}
+			>
+				{content}
+			</a>
+		);
+	}
+
 	return (
 		<button
 			type={type}
@@ -106,28 +146,7 @@ export default function Button({
 			aria-disabled={disabled || loading}
 			aria-busy={loading}
 		>
-			{loading ? (
-				<>
-					<Spinner size="sm" />
-					<span>{loadingText}</span>
-				</>
-			) : (
-				<>
-					{leftIcon && (
-						<span className="flex items-center">
-							{leftIcon}
-						</span>
-					)}
-
-					<span>{children}</span>
-
-					{rightIcon && (
-						<span className="flex items-center">
-							{rightIcon}
-						</span>
-					)}
-				</>
-			)}
+			{content}
 		</button>
 	);
 }

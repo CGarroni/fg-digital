@@ -27,7 +27,7 @@ const items = [
 
 export default function WhyChoose() {
   return (
-    <section id="why-choose" className="section-padding">
+    <section id="why-choose" className="section-padding bg-[#0A0908]">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection className="max-w-3xl">
           <span className="text-[#D4AF37] uppercase tracking-[0.25em] text-sm">

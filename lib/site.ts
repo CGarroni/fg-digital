@@ -1,14 +1,14 @@
 export const siteConfig = {
   name: "FG Digital",
 
-  title: "FG Digital",
+  title: "FG Digital — Criação de Sites em Porto Alegre",
 
   description:
-    "Transformamos visitantes em oportunidades de negócio através de Landing Pages e Sites Institucionais Premium.",
+    "Criação de landing pages e sites institucionais premium em Porto Alegre e região metropolitana. Transformamos visitantes em oportunidades de negócio.",
 
-  url: "https://SEU-DOMINIO.com",
+  url: "https://fg-digital.vercel.app",
 
-  ogImage: "/seo/og-image.jpg",
+  ogImage: "/seo/og-image-v2.jpg",
 
   author: "Francisco Santos Garroni",
 

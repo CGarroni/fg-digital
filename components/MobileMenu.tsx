@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { navigation } from "@/lib/navigation";
 import { scrollToSection } from "@/utils/scrollToSection";
 import Button from "@/components/ui/Button";
+import { CTA_LABEL, whatsappLink } from "@/lib/contact";
 
 export default function MobileMenu() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -49,11 +50,11 @@ duration-300"
 
 						<div className="pt-4 border-t border-white/10">
 							<Button
-								sectionId="contact"
+								href={whatsappLink()}
 								onClick={() => setIsOpen(false)}
 								fullWidth
 							>
-								Solicitar Análise Gratuita
+								{CTA_LABEL}
 							</Button>
 						</div>
 					</div>
