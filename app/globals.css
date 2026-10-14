@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-signature: "Great Vibes", cursive;
+}
+
 :root {
   --bg-primary: #050505;
   --bg-secondary: #0b0b0b;
@@ -112,6 +117,18 @@ body {
   border-radius: 999px;
 }
 
+/* ── Comparador lado a lado: revelação suave na troca de seção ── */
+@keyframes compare-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ── Premium pulse for highlighted plan border ───── */
 @keyframes premium-pulse {
   0%, 100% {
@@ -120,4 +137,61 @@ body {
   50% {
     opacity: 0.5;
   }
+}
+
+/* ── Cinematográfico: Ken Burns lento (só transform — roda no compositor) ── */
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 9s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* ── Cinematográfico: deriva lenta dos brilhos ambientes (só transform) ──── */
+@keyframes drift-slow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(48px, -36px, 0);
+  }
+}
+
+.animate-drift-slow {
+  animation: drift-slow 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-kenburns,
+  .animate-drift-slow {
+    animation: none;
+  }
+}
+
+/* ── Duotone dourado — retrato do fundador ────────── */
+.duotone-gold {
+  filter: grayscale(1) sepia(0.55) saturate(2.4) hue-rotate(-12deg)
+    brightness(0.94) contrast(1.06);
+}
+
+/* ── Máscara de fade nas bordas (retrato) ─────────── */
+.portrait-fade {
+  -webkit-mask-image: radial-gradient(
+    ellipse 92% 90% at 50% 42%,
+    black 52%,
+    transparent 97%
+  );
+  mask-image: radial-gradient(
+    ellipse 92% 90% at 50% 42%,
+    black 52%,
+    transparent 97%
+  );
 }

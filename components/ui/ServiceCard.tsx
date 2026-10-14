@@ -6,6 +6,7 @@ import { CheckCircle2 } from "lucide-react";
 
 import Button from "@/components/ui/Button";
 import type { Service } from "@/lib/data/services";
+import { whatsappLink, WHATSAPP_MESSAGE } from "@/lib/contact";
 
 type ServiceCardProps = {
   service: Service;
@@ -107,7 +108,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           <Button
             fullWidth
             variant={highlight ? "primary" : "secondary"}
-            sectionId="contact"
+            href={whatsappLink(`${WHATSAPP_MESSAGE} (${title})`)}
           >
             {buttonText}
           </Button>

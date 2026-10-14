@@ -35,7 +35,7 @@ export default function Benefits() {
   return (
     <section
       id="benefits"
-      className="relative section-padding bg-[#050505] overflow-hidden"
+      className="relative section-padding bg-[#0A0908] overflow-hidden"
     >
       <AmbientBackground />
 
