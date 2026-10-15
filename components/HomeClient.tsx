@@ -1,47 +1,49 @@
 "use client";
 
-import { useState, useCallback } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Benefits from "@/components/Benefits";
 import Process from "@/components/Process";
+import Cases from "@/components/Cases";
+import SpaShowcase from "@/components/SpaShowcase";
+import Quiz from "@/components/Quiz";
 import WhyChoose from "@/components/WhyChoose";
 import Authority from "@/components/Authority";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Services from "@/components/Services";
+import Sobre from "@/components/Sobre";
 import FAQ from "@/components/FAQ";
-import Preloader from "@/components/Preloader";
-import PageSpeed from "@/components/PageSpeed";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import SectionDivider from "@/components/ui/SectionDivider";
 
 export default function HomeClient() {
-  const [preloaderDone, setPreloaderDone] = useState(false);
-
-  const handlePreloaderComplete = useCallback(() => {
-    setPreloaderDone(true);
-  }, []);
-
   return (
     <>
-      <Preloader onComplete={handlePreloaderComplete} />
-
       <Header />
 
       <main>
-        <Hero animate={preloaderDone} />
+        <Hero />
         <Stats />
-        <PageSpeed />
         <Benefits />
         <Process />
+        <SectionDivider />
+        <Cases />
+        <SpaShowcase />
         <Services />
+        <Quiz />
+        <SectionDivider />
+        <Sobre />
         <FAQ />
         <WhyChoose />
         <Authority />
+        <SectionDivider />
         <Contact />
       </main>
 
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 }

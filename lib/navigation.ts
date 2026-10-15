@@ -6,16 +6,20 @@ export const navigation = [
     href: "#hero",
   },
   {
-    label: "Benefícios",
-    href: "#benefits",
-  },
-  {
     label: "Processo",
     href: "#process",
   },
   {
+    label: "Projetos",
+    href: "#projetos",
+  },
+  {
     label: "Serviços",
     href: "#services",
+  },
+  {
+    label: "Sobre",
+    href: "#sobre",
   },
   {
     label: "FAQ",

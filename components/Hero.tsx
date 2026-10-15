@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useEffect, useState, useCallback } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef, useEffect, useState, useCallback, Fragment } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import type { Variants } from "framer-motion";
 import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
@@ -9,6 +9,7 @@ import HeroShowcase from "@/components/HeroShowcase";
 import Button from "@/components/ui/Button";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { EASE } from "@/components/motion";
+import { CTA_LABEL, whatsappLink } from "@/lib/contact";
 
 interface HeroProps {
   animate?: boolean;
@@ -16,18 +17,32 @@ interface HeroProps {
 
 /* ── Helpers ───────────────────────────────────────────── */
 
+/**
+ * Divide o texto por palavra (não por caractere) para que a quebra de
+ * linha nunca aconteça no meio de uma palavra — mas permite quebrar
+ * ENTRE palavras (espaço normal fora do span nowrap). Os caracteres
+ * internos mantêm a classe .char-reveal para a animação GSAP.
+ */
 function splitTextToSpans(text: string, goldChar = false) {
-  return text.split("").map((char, i) => (
-    <span
-      key={`${char}-${i}`}
-      className="inline-block"
-    >
-      <span
-        className={`inline-block char-reveal ${goldChar ? "gold-gradient" : ""}`}
-      >
-        {char === " " ? "\u00A0" : char}
+  const words = text.split(" ");
+  return words.map((word, i) => (
+    <Fragment key={`${word}-${i}`}>
+      <span className="inline-block whitespace-nowrap">
+        {word.split("").map((char, j) => (
+          <span
+            key={`${char}-${j}`}
+            className="inline-block"
+          >
+            <span
+              className={`inline-block char-reveal ${goldChar ? "gold-gradient" : ""}`}
+            >
+              {char}
+            </span>
+          </span>
+        ))}
       </span>
-    </span>
+      {i < words.length - 1 ? " " : null}
+    </Fragment>
   ));
 }
 
@@ -96,6 +111,11 @@ export default function Hero({ animate = true }: HeroProps) {
     },
   };
 
+  /* ── Parallax cinematográfico nos brilhos (só transform — sem custo de layout) ── */
+  const { scrollY } = useScroll();
+  const glowY = useTransform(scrollY, [0, 700], [0, 150]);
+  const glowOpacity = useTransform(scrollY, [0, 700], [1, 0.35]);
+
   /* ── 3D Parallax on showcase ────────────────────────── */
 
   const showcaseContainerRef = useRef<HTMLDivElement>(null);
@@ -127,8 +147,9 @@ export default function Hero({ animate = true }: HeroProps) {
         md:pt-40
       "
     >
-      {/* ── Ambient background glows ──────────────────── */}
-      <div
+      {/* ── Ambient background glows (parallax cinematográfico) ── */}
+      <motion.div
+        style={reduce ? undefined : { y: glowY, opacity: glowOpacity }}
         className="
           absolute
           inset-0
@@ -161,7 +182,25 @@ export default function Hero({ animate = true }: HeroProps) {
             blur-[150px]
           "
         />
-      </div>
+
+        {/* Orbe dourado à deriva — movimento ambiente contínuo */}
+        {!reduce && (
+          <div
+            aria-hidden
+            className="
+              animate-drift-slow
+              absolute
+              top-1/3
+              left-1/4
+              w-20
+              h-20
+              rounded-full
+              bg-[#D4AF37]/8
+              blur-[120px]
+            "
+          />
+        )}
+      </motion.div>
 
       <div
         className="
@@ -185,9 +224,11 @@ export default function Hero({ animate = true }: HeroProps) {
             <motion.div
               variants={itemVariants}
               className="
-                inline-flex
-                items-start
-                lg:items-center
+                flex
+                flex-wrap
+                w-fit
+                max-w-full
+                items-center
                 gap-2
                 px-4
                 py-2
@@ -209,6 +250,7 @@ export default function Hero({ animate = true }: HeroProps) {
 
               <span
                 className="
+                  min-w-0
                   text-xs
                   uppercase
                   tracking-[0.25em]
@@ -227,8 +269,9 @@ export default function Hero({ animate = true }: HeroProps) {
                 ref={titleRef}
                 className="
                   text-4xl sm:text-5xl md:text-7xl
-                  font-bold
-                  leading-[0.95]
+                  font-display
+                  font-semibold
+                  leading-[1.05]
                 "
               >
                 {reduce ? (
@@ -275,7 +318,7 @@ export default function Hero({ animate = true }: HeroProps) {
               className="flex flex-row flex-wrap gap-4 mt-10"
             >
               <MagneticButton strength={0.35}>
-                <Button sectionId="contact">Solicitar Análise Gratuita</Button>
+                <Button href={whatsappLink()}>{CTA_LABEL}</Button>
               </MagneticButton>
 
               <MagneticButton strength={0.25}>
