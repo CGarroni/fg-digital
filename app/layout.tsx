@@ -103,6 +103,12 @@ const jsonLd = {
   url: siteConfig.url,
   logo: `${siteConfig.url}/images/hero/fg-digital.png`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
+  sameAs: [
+  "https://github.com/CGarroni",
+  // Descomenta quando o perfil @fgdigital estiver no ar:
+  // "https://www.instagram.com/fgdigital",
+],
+
   author: {
     "@type": "Person",
     name: siteConfig.author,
