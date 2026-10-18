@@ -1,10 +1,10 @@
 export const siteConfig = {
   name: "FG Digital",
 
-  title: "FG Digital — Criação de Sites em Porto Alegre",
+  title: "FG Digital — Criação de Sites em Novo Hamburgo e Porto Alegre",
 
   description:
-    "Criação de landing pages e sites institucionais premium em Porto Alegre e região metropolitana. Transformamos visitantes em oportunidades de negócio.",
+    "Criação de landing pages e sites institucionais premium em Novo Hamburgo, Porto Alegre e região metropolitana. Transformamos visitantes em oportunidades de negócio.",
 
   url: "https://fg-digital.vercel.app",
 
