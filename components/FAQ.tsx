@@ -19,8 +19,8 @@ export default function FAQ() {
         <AnimatedSection>
           <SectionHeader
             eyebrow="DÚVIDAS FREQUENTES"
-            title="Respondemos às principais dúvidas antes mesmo da nossa primeira conversa."
-            description="Nosso objetivo é que você tenha segurança para tomar a melhor decisão para sua empresa."
+            title="Respondo às principais dúvidas antes mesmo da nossa primeira conversa."
+            description="Meu objetivo é que você tenha segurança para tomar a melhor decisão para sua empresa."
           />
         </AnimatedSection>
 

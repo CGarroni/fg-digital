@@ -13,27 +13,27 @@ export const faq: FAQ[] = [
 	},
 	{
 		id: "dominio",
-		question: "Vocês cuidam do domínio e da hospedagem?",
+		question: "Você cuida do domínio e da hospedagem?",
 		answer:
-			"Sim. Podemos orientar ou cuidar de toda a configuração para que você não precise se preocupar com a parte técnica.",
+			"Sim. Eu configuro tudo para você não precisar se preocupar com a parte técnica.",
 	},
 	{
 		id: "google",
 		question: "Meu site aparecerá no Google?",
 		answer:
-			"Desenvolvemos o projeto seguindo boas práticas de SEO técnico para facilitar a indexação pelos mecanismos de busca.",
+			"Eu desenvolvo o projeto seguindo boas práticas de SEO técnico para facilitar a indexação pelos mecanismos de busca.",
 	},
 	{
 		id: "alteracoes",
 		question: "Posso solicitar alterações após a entrega?",
 		answer:
-			"Sim. Todo projeto possui um período inicial para ajustes e também oferecemos planos de manutenção para evoluções futuras.",
+			"Sim. Todo projeto possui um período inicial para ajustes e também ofereço planos de manutenção para evoluções futuras.",
 	},
 	{
 		id: "whatsapp",
 		question: "O site terá integração com WhatsApp?",
 		answer:
-			"Sim. Todos os nossos projetos podem integrar botões estratégicos e formulários direcionados ao WhatsApp da empresa.",
+			"Sim. Todos os meus projetos podem integrar botões estratégicos e formulários direcionados ao WhatsApp da empresa.",
 	},
 	{
 		id: "pagamento",

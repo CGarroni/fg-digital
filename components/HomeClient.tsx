@@ -8,8 +8,6 @@ import Process from "@/components/Process";
 import Cases from "@/components/Cases";
 import SpaShowcase from "@/components/SpaShowcase";
 import Quiz from "@/components/Quiz";
-import WhyChoose from "@/components/WhyChoose";
-import Authority from "@/components/Authority";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Services from "@/components/Services";
@@ -36,8 +34,6 @@ export default function HomeClient() {
         <SectionDivider />
         <Sobre />
         <FAQ />
-        <WhyChoose />
-        <Authority />
         <SectionDivider />
         <Contact />
       </main>

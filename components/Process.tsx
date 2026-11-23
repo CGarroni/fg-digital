@@ -13,22 +13,22 @@ const steps = [
   {
     number: "01",
     title: "Diagnóstico",
-    description: "Entendemos sua empresa, objetivos e desafios.",
+    description: "Entendo sua empresa, objetivos e desafios.",
   },
   {
     number: "02",
     title: "Estratégia",
-    description: "Definimos a melhor estrutura para gerar resultados.",
+    description: "Defino a melhor estrutura para gerar resultados.",
   },
   {
     number: "03",
     title: "Desenvolvimento",
-    description: "Construímos uma experiência digital premium.",
+    description: "Construo uma experiência digital premium.",
   },
   {
     number: "04",
     title: "Evolução",
-    description: "Acompanhamos melhorias e crescimento contínuo.",
+    description: "Acompanho melhorias e crescimento contínuo.",
   },
 ];
 
@@ -82,7 +82,7 @@ export default function Process() {
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection>
             <SectionHeader
-              eyebrow="Nosso Método"
+              eyebrow="Meu Método"
               title="Um processo pensado para transformar estratégia em resultados reais."
               description="Cada etapa foi planejada para entender seu negócio, desenvolver a melhor solução e entregar uma presença digital que gere resultados consistentes."
             />
@@ -106,7 +106,7 @@ export default function Process() {
             "
           >
             <span className="text-[#D4AF37] uppercase tracking-[0.25em] text-sm">
-              Nosso Método
+              Meu Método
             </span>
 
             <h2 className="text-4xl md:text-5xl font-bold mt-6 leading-tight">

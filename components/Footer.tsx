@@ -38,8 +38,7 @@ export default function Footer() {
             leading-relaxed
             "
           >
-            Transformamos visitantes em oportunidades de negócio através
-            de experiências digitais premium.
+            Transformo visitantes em oportunidades de negócio através de experiências digitais sob medida.
           </p>
         </div>
 

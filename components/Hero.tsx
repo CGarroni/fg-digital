@@ -276,20 +276,20 @@ export default function Hero({ animate = true }: HeroProps) {
               >
                 {reduce ? (
                   <>
-                    Transformamos
-                    <span className="gold-gradient block">empresas em</span>
-                    referências digitais.
+                    Sites que geram
+                    <span className="gold-gradient block">clientes reais</span>
+                    para o seu negócio.
                   </>
                 ) : (
                   <>
                     <span className="block">
-                      {splitTextToSpans("Transformamos")}
+                      {splitTextToSpans("Sites que geram")}
                     </span>
                     <span className="block">
-                      {splitTextToSpans("empresas em", true)}
+                      {splitTextToSpans("clientes reais", true)}
                     </span>
                     <span className="block">
-                      {splitTextToSpans("referências digitais.")}
+                      {splitTextToSpans("para o seu negócio.")}
                     </span>
                   </>
                 )}
@@ -307,9 +307,7 @@ export default function Hero({ animate = true }: HeroProps) {
                 max-w-xl
               "
             >
-              Desenvolvemos experiências digitais que fortalecem a credibilidade
-              da sua empresa, aumentam a confiança dos seus clientes e
-              transformam visitantes em oportunidades reais de negócio.
+              Eu crio sites, landing pages e sistemas sob medida para empresas do Vale dos Sinos e Porto Alegre serem encontradas no Google, transmitirem autoridade e fecharem mais clientes no WhatsApp.
             </motion.p>
 
             {/* CTA buttons — magnetic */}
@@ -327,7 +325,7 @@ export default function Hero({ animate = true }: HeroProps) {
                   variant="secondary"
                   rightIcon={<ArrowRight size={18} />}
                 >
-                  Conheça Nosso Processo
+                  Conheça meu processo
                 </Button>
               </MagneticButton>
             </motion.div>

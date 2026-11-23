@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "FG Digital — Criação de Sites em Novo Hamburgo e Porto Alegre",
 
   description:
-    "Criação de landing pages e sites institucionais premium em Novo Hamburgo, Porto Alegre e região metropolitana. Transformamos visitantes em oportunidades de negócio.",
+    "Na FG Digital, eu crio sites, landing pages e sistemas web sob medida para empresas de Novo Hamburgo, Vale dos Sinos e Porto Alegre gerarem mais clientes.",
 
   url: "https://fg-digital.vercel.app",
 
