@@ -6,7 +6,7 @@ export const siteConfig = {
   description:
     "Na FG Digital, eu crio sites, landing pages e sistemas web sob medida para empresas de Novo Hamburgo, Vale dos Sinos e Porto Alegre gerarem mais clientes.",
 
-  url: "https://fg-digital.vercel.app",
+  url: "https://fgdigitalbrasil.com.br",
 
   ogImage: "/seo/og-image-v2.jpg",
 

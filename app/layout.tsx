@@ -30,7 +30,7 @@ const signatureScript = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fg-digital.vercel.app"),
+  metadataBase: new URL("https://fgdigitalbrasil.com.br"),
 
   title: {
     default: siteConfig.title,
